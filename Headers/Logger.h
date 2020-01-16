@@ -10,9 +10,9 @@
  * 
  *  Define LOG_COLORIZED to enable bash colors
  */
-#ifndef VERBOSE
-    #define VERBOSE 0
-#endif
+
+#define VERBOSE 4
+#define LOG_COLORIZED
 
 #ifdef VERBOSE
     #include <iostream>
