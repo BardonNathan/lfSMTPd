@@ -1,0 +1,16 @@
+# lfSMTPd - LazyFox SMTP deamon
+
+## Introduction
+    *lfSMTPd* is a lightweight SMTP server to purpose MSA and MTA roles.
+
+## Code architecture
+    - Main
+        - Starts 2 threads (Server and Pooler)
+    - Server
+        - Loop to accept clients
+            - Start a new thread to handle each clients.
+            
+   - Pooler
+        - Send email from a queue one by one.
+        - If no email left, the thread stops.
+        - If a new message need to be sent, the thread is restarting.
