@@ -1,4 +1,4 @@
-# lfSMTPd - LazyFox SMTP deamon
+# lfSMTPd - LazyFox SMTP daemon
 
 ## Introduction
     *lfSMTPd* is a lightweight SMTP server to purpose MSA and MTA roles.
