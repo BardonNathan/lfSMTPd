@@ -18,6 +18,7 @@
     #include <iostream>
     #define logIl(x) std::cout << x << std::flush
     #define log(x) std::cout << std::endl << x << std::flush
+    #define logln() std::cout << std::endl
 
     #ifdef LOG_COLORIZED 
         #define COLOR_INFO  "\033[34m" <<
