@@ -21,11 +21,14 @@
     #define logln() std::cout << std::endl
 
     #ifdef LOG_COLORIZED 
-        #define COLOR_INFO  "\033[34m" <<
-        #define COLOR_WARN  "\033[33m" <<
-        #define COLOR_ERROR "\033[31m" <<
-        #define COLOR_RESET "\033[0m"  <<
+        #define COLOR_INFO    "\033[34m" <<
+        #define COLOR_SUCCESS "\033[32m" <<
+        #define COLOR_WARN    "\033[33m" <<
+        #define COLOR_ERROR   "\033[31m" <<
+        #define COLOR_RESET   "\033[0m"  <<
     #else
+        #define COLOR_INFO
+        #define COLOR_SUCCESS
         #define COLOR_WARN
         #define COLOR_ERROR
         #define COLOR_RESET
@@ -35,9 +38,15 @@
     #if VERBOSE >= 3
         #define logInfo(x) std::cout << std::endl << COLOR_INFO "[Info] " << x << COLOR_RESET std::flush
         #define logIlInfo(x) std::cout << COLOR_INFO x << COLOR_RESET std::flush
+
+        #define logSuccess(x) std::cout << std::endl << COLOR_SUCCESS "[Success] " << x << COLOR_RESET std::flush
+        #define logIlSuccess(x) std::cout << COLOR_SUCCESS x << COLOR_RESET std::flush
     #else
         #define logInfo(x)
         #define logIlInfo(x)
+        
+        #define logSuccess(x)
+        #define logIlSuccess(x)
     #endif
 
     #if VERBOSE >= 2
