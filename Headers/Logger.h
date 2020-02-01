@@ -36,7 +36,7 @@
 
 
     #if VERBOSE >= 3
-        #define logInfo(x) std::cout << std::endl << COLOR_INFO "[Info] " << x << COLOR_RESET std::flush
+        #define logInfo(x) std::cout << std::endl << COLOR_INFO "[ Info  ] " << x << COLOR_RESET std::flush
         #define logIlInfo(x) std::cout << COLOR_INFO x << COLOR_RESET std::flush
 
         #define logSuccess(x) std::cout << std::endl << COLOR_SUCCESS "[Success] " << x << COLOR_RESET std::flush
@@ -50,7 +50,7 @@
     #endif
 
     #if VERBOSE >= 2
-        #define logWarn(x) std::cout << std::endl << COLOR_WARN "[Warn] " << x << COLOR_RESET std::flush
+        #define logWarn(x) std::cout << std::endl << COLOR_WARN "[Warning] " << x << COLOR_RESET std::flush
         #define logIlWarn(x) std::cout << COLOR_WARN x << COLOR_RESET std::flush
     #else
         #define logWarn(x)
@@ -58,7 +58,7 @@
     #endif
 
     #if VERBOSE >= 1
-        #define logError(x) std::cout << std::endl << COLOR_ERROR "[Error] " << x << COLOR_RESET std::flush
+        #define logError(x) std::cout << std::endl << COLOR_ERROR "[ Error ] " << x << COLOR_RESET std::flush
         #define logIlError(x) std::cout << COLOR_ERROR x << COLOR_RESET std::flush
     #else
         #define logError(x)
