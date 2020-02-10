@@ -12,8 +12,8 @@
 #define EXITCODE_DEFAULT_CONF_CREATED -2
 
 /** Structure to store running configuration */
-struct {
-    char *hostname;
+struct RunningConfig {
+    char *hostname = NULL;
     int port;
     int timeout;
     int maxMessageSize;
@@ -22,7 +22,9 @@ struct {
     int motqDelay;
     std::list<std::string> motd;
     std::list<std::string> motq;
-} Config;
+};
+
+extern RunningConfig Config;
 
 int parseConfig(const char *filename);
 int createDefaultConfig(const char *filename);
