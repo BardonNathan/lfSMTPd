@@ -5,6 +5,8 @@
  *  -------------
  */
 
+struct RunningConfig Config;
+
 /** Parse configuration from filename.
   * @arg filename : path to configuration file
   * @return 0 on success or EXITCODE_*
@@ -28,8 +30,13 @@ int parseConfig(const char *filename) {
                 if (key == "port")
                     Config.port = std::stoi(value);
 
-                else if (key == "hostname")
-                    Config.hostname = const_cast<char *>(value.c_str());
+                else if (key == "hostname") {
+                    if (Config.hostname != NULL)
+                        delete Config.hostname;
+
+                    Config.hostname = new char[value.length()];
+                    value.copy(Config.hostname, value.length());
+                }
 
                 else if (key == "timeout")
                     Config.timeout = std::stoi(value);
